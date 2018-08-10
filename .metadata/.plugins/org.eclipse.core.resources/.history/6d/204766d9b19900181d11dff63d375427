@@ -1,0 +1,37 @@
+package stepDefinitions;
+
+import org.openqa.selenium.By;
+
+import com.test.cucumber.pages.LoginPage;
+import com.test.cucumber.util.TestBase;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+
+public class StepDefinitions extends TestBase {
+	
+	LoginPage loginPage = new LoginPage(driver);
+	
+	@Given("^user opens browser$")
+	public void user_opens_browser() throws Throwable {
+          TestBase.initialization();
+	}
+
+	@Then("^user is on login page$")
+	public void user_is_on_login_page() throws Throwable {
+		driver.findElement(By.id("email")).isDisplayed();
+	    
+	}
+	
+	@Then("^user enters username as \"([^\"]*)\" and password as \"([^\"]*)\"$")
+	public void user_enters_username_as_and_password_as(String arg1, String arg2) throws Throwable {
+		
+	    
+	}
+	
+	@Then("^user clicks on login button$")
+	public void user_clicks_on_login_button() throws Throwable {
+	    loginPage.clickLoginButton();
+	}
+
+}
